@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Administration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        header .header-right {
+            display: flex;
+            align-items: center;
+        }
+        header .logout-button {
+            background-color: #2588e4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin-left: 10px; /* Adjusted margin for better spacing */
+        }
+        header .logout-button:hover {
+            background-color: #1d6ec7;
+        }
+        header .messaging-link {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        header .messaging-link:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            margin: 80px auto 20px; /* Adjusted for fixed header */
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.2s;
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card h3 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .card a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Interface de Planification</h1>
+        <div class="header-right">
+            <a href="interface_message.html" class="messaging-link">Messaging Others</a>
+            <a href="deconnexion.php" class="logout-button" title="Déconnexion">Déconnexion</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h3>Mon Calendrier</h3>
+            <p>Accédez à votre calendrier pour gérer vos événements et tâches.</p>
+            <a href="calendrier.php">Voir le calendrier</a>
+        </div>
+        <div class="card">
+            <h3>L'Archive des Employés</h3>
+            <p>Consultez les archives des employés et leurs historiques.</p>
+            <a href="archive_employes.php">Voir l'archive</a>
+        </div>
+        <div class="card">
+            <h3>Statistiques</h3>
+            <p>Visualisez les statistiques de performance et de validation.</p>
+            <a href="statistiques.html">Voir les statistiques</a>
+        </div>
+    </div>
+</body>
+</html>

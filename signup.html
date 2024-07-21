@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <style>
+        body {
+            background-image: linear-gradient(
+                     rgba(0, 0, 0, 0.1), 
+                      rgba(0, 0, 0, 0.1)
+            ),  url('images/lafarge_holcim_meknes.jpeg');
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Inscription</h2>
+        <form id="signup-form" action="signup.php" method="POST" enctype="multipart/form-data">
+            <label for="nom">Nom (obligatoire):</label>
+            <input type="text" id="nom" name="nom" required>
+
+            <label for="prenom">Prénom (obligatoire):</label>
+            <input type="text" id="prenom" name="prenom" required>
+
+            <label for="nom_utilisateur">Nom d'utilisateur (obligatoire):</label>
+            <input type="text" id="nom_utilisateur" name="nom_utilisateur" required>
+
+            <label for="email">Email (obligatoire):</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mot_de_passe">Mot de passe (obligatoire):</label>
+            <input type="password" id="mot_de_passe" name="mot_de_passe" required>
+
+            <label for="mode">Mode (obligatoire):</label>
+            <select id="mode" name="mode" required>
+                <option value="Administrateur">Administrateur</option>
+                <option value="Opérateur">Opérateur</option>
+            </select>
+
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+</body>
+</html>

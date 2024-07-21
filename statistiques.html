@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphique des Validations</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- chart.js-->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .date-selector {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        label {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        input[type="date"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 5px 15px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+        .home-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .home-icon a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 24px;
+        }
+        .home-icon a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="home-icon">
+            <a href="statistique.html" title="Retour à l'accueil"><i class="fas fa-home"></i> Retour à l'accueil</a>
+        </div>
+        <h1>Nombre de Validations par Utilisateur</h1>
+
+        <!-- Date selector -->
+        <div class="date-selector">
+            <label for="date">Choisir une date:</label>
+            <input type="date" id="date" name="date">
+            <button id="applyBtn">Appliquer</button>
+        </div>
+
+        <canvas id="myChart" width="800" height="400"></canvas>
+
+        <script>
+            var myChart = null;
+
+            function updateChart(data) {
+                if (myChart) {
+                    // Update existing chart data
+                    myChart.data.labels = data.labels;
+                    myChart.data.datasets = data.datasets;
+                    myChart.update();
+                } else {
+                    // Create a new chart
+                    var ctx = document.getElementById('myChart').getContext('2d');
+                    myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: data.labels,
+                            datasets: data.datasets
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+
+            document.getElementById('applyBtn').addEventListener('click', function() {
+                var selectedDate = document.getElementById('date').value;
+
+                // Fetch data from PHP script with the selected date
+                fetch(`data.php?date=${selectedDate}`) // sending date with json
+                    .then(response => response.json())
+                    .then(data => {
+                        updateChart(data);
+                    })
+                    .catch(error => console.error('Erreur lors de la récupération des données:', error));
+            });
+        </script>
+    </div>
+</body>
+</html>

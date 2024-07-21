@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface de Messagerie</title>
+    <link rel="stylesheet" href="css/interface_message.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+        header h1 {
+            margin: 0;
+        }
+        header .logout {
+            color: white;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        header .logout i {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        header .logout:hover {
+            color: #ddd;
+        }
+        .container {
+            margin: 80px 20px 20px 20px; /* Top margin adjusted for fixed header */
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #4CAF50;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .card a:hover {
+            background-color: #45a049;
+        }
+        .card h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Interface de Messagerie</h1>
+        <a href="deconnexion.php" class="logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</a> <!-- Logout Link -->
+    </header>
+
+    <div class="container">
+        <!-- Card to Send a Message -->
+        <div class="card">
+            <h2>Envoyer un Message</h2>
+            <p>Utilisez ce formulaire pour envoyer un nouveau message à un autre utilisateur.</p>
+            <a href="message.html">Envoyer un Message</a>
+        </div>
+
+        <!-- Card to Visit Inbox -->
+        <div class="card">
+            <h2>Visiter votre Boîte de Réception</h2>
+            <p>Consultez les messages que vous avez reçus dans votre boîte de réception.</p>
+            <a href="show_message.php">Voir les Messages</a>
+        </div>
+    </div>
+</body>
+</html>

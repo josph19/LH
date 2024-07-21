@@ -1,0 +1,44 @@
+/* details.css */
+
+/* Général */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    color: #003366; /* Dark blue */
+}
+
+/* Texte */
+p {
+    color: #333; /* Dark grey */
+    line-height: 1.6;
+}
+
+/* Liens */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007BFF; /* Blue */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: #0056b3; /* Darker blue */
+}

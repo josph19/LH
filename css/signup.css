@@ -1,0 +1,53 @@
+/* styleindex.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.signup-container {
+    background-color: #fff;
+    padding: 20px; /* Padding inside the container */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.signup-container h2 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.signup-container label {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+}
+
+.signup-container input,
+.signup-container select,
+.signup-container button {
+    width: calc(100% - 16px); /* Adjust width to account for padding */
+    padding: 12px; /* Increase padding for more space inside the fields */
+    margin-top: 10px; /* Space between fields and below labels */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.signup-container button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    margin-top: 20px; /* Space above the button */
+    padding: 12px; /* Increased padding for the button */
+}
+
+.signup-container button:hover {
+    background-color: #0056b3;
+}

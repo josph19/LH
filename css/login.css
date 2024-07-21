@@ -1,0 +1,65 @@
+/* styleindex.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px; /* Padding inside the container for spacing */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 0 auto; /* Center horizontally */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: calc(100% - 16px); /* Account for padding */
+    padding: 8px;
+    margin-bottom: 15px; /* Space between input fields */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+a {
+    display: block;
+    text-align: center;
+    color: #3498db;
+    text-decoration: none;
+    margin-top: 10px; /* Space above the link */
+}
+
+a:hover {
+    text-decoration: underline;
+}
